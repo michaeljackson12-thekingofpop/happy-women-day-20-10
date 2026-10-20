@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nụ & Lời chúc 20/10</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background: #0f0715; /* Nền tối tím đậm */
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            position: relative;
+        }
+
+        /* Khung vòng sáng xung quanh bông hoa */
+        .container {
+            text-align: center;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .flower-circle {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        /* Hiệu ứng vòng tròn phát sáng xung quanh */
+        .flower-circle::before, .flower-circle::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 182, 193, 0.2);
+            animation: pulseCircle 3s infinite ease-in-out;
+        }
+
+        .flower-circle::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .flower-circle::after {
+            width: 130%;
+            height: 130%;
+            animation-delay: 1s;
+        }
+
+        @keyframes pulseCircle {
+            0%, 100% { transform: scale(0.95); opacity: 0.3; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+
+        /* SVG Bông hoa Tulip phát sáng */
+        .flower-svg {
+            width: 90px;
+            height: 120px;
+            filter: drop-shadow(0 0 15px #ff758c) drop-shadow(0 0 30px #ff758c);
+            animation: floatFlower 3s ease-in-out infinite;
+        }
+
+        @keyframes floatFlower {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* Tiêu đề */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            line-height: 1.4;
+        }
+
+        /* Nút bấm phát sáng Neon */
+        .btn-open {
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            border: 1px solid #ff758c;
+            padding: 12px 35px;
+            font-size: 1.05rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: inherit;
+            letter-spacing: 2px;
+            box-shadow: 0 0 15px rgba(255, 117, 140, 0.4), inset 0 0 10px rgba(255, 117, 140, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn-open:hover {
+            background: #ff758c;
+            box-shadow: 0 0 25px rgba(255, 117, 140, 0.8);
+            transform: scale(1.05);
+        }
+
+        /* Lời nhắn nhỏ bên dưới */
+        .sub-text {
+            position: absolute;
+            bottom: 25px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 1px;
+        }
+
+        /* Lời chúc hiển thị khi bấm nút */
+        .message-box {
+            display: none;
+            margin-top: 20px;
+            max-width: 400px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 117, 140, 0.3);
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Vòng sáng & Bông hoa phát sáng -->
+        <div class="flower-circle">
+            <svg class="flower-svg" viewBox="0 0 100 120">
+                <!-- Cánh lá -->
+                <path d="M 50,80 Q 30,65 30,50 Q 45,65 50,80" fill="#7
